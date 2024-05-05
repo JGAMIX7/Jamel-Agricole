@@ -1,0 +1,709 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Poppins, sans-serif;
+}
+
+/* ========== Variables CSS ========== */
+:root {
+   --neon-blue: #4666ff;
+   --white: #FFFFFF;
+   --black: #000000;
+   --black-60: rgba(0, 0, 0, 0.60);
+   --grey: #D7D7D7;
+}
+
+/* ========== Style global ========== */
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   width: 100%;
+   height: 100vh;
+   background-color: var(--neon-blue);
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+h1,
+h2,
+a,
+p,
+input,
+textarea {
+   letter-spacing: 2px;
+}
+
+img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+section{
+   scroll-margin: 80px;
+   padding: 0 1.5rem;
+}
+
+/* ========== Header ========== */
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 80px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 1.25rem;
+   background-color: var(--white);
+   z-index: 1;
+}
+
+.logo {
+   color: var(--neon-blue);
+   font-size: 2rem;
+   font-weight: 900;
+}
+
+.toggle ion-icon,
+.close ion-icon {
+   font-size: 3.125rem;
+   color: var(--neon-blue);
+}
+
+/* ========== Navigation ========== */
+.nav-menu{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background: var(--white);
+   transform: translateY(-200%);
+   transition: all .3s;
+}
+
+.nav-list {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1.5rem;
+   padding: 3rem 0;
+   z-index: 2;
+}
+
+.nav-menu.active {
+   transform: translateY(0);
+   transition: all .3s;
+}
+
+.close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+.nav-link {
+   color: var(--neon-blue);
+   font-size: 1.375rem;
+   font-weight: 700;
+   position: relative;
+}
+
+.nav-link::after {
+   position: absolute;
+   content: "";
+   width: 0;
+   height: 3px;
+   background-color: var(--neon-blue);
+   bottom: -3px;
+   left: 0;
+   transition: .3s;
+}
+
+.nav-link:hover::after {
+   width: 100%;
+}
+
+/* ========== Section Accueil ==========*/
+.home {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column-reverse;
+   justify-content: center;
+   align-items: center;
+   margin: 175px auto 80px;
+}
+
+/* ====== Partie gauche ====== */
+.home__left-side {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.home__title {
+   color: #fff;
+   font-size: 1.75rem;
+   line-height: 1.2;
+   margin-bottom: 12px;
+}
+
+.home__description {
+   max-width: 510px;
+   font-size: 1rem;
+   color: #fff;
+   margin-bottom: 1.25rem;
+}
+
+.home__buttons {
+   display: flex;
+   gap: 20px;
+}
+
+.home__btn {
+   padding: 0.9375rem;
+   font-size: 1rem;
+   font-weight: 700;
+   border-radius: 5px;
+}
+
+.contact-btn {
+   color: var(--neon-blue);
+   background-color: #fff;
+   border: 3px solid transparent;
+   transition: all ease-in .3s;
+}
+
+.contact-btn:hover {
+   color: #fff;
+   background-color: transparent;
+   border: 3px solid #fff;
+}
+
+.project-btn {
+   color: #fff;
+   background-color: transparent;
+   border: 3px solid #fff;
+   transition: all ease-in .3s;
+}
+
+.project-btn:hover {
+   color: var(--neon-blue);
+   background-color: #fff;
+   border: 3px solid #fff;
+}
+
+/* ====== Partie Droite ====== */
+.home__right-side{
+   width: 320px;
+   height: 320px;
+   margin-bottom: 20px;
+}
+
+/* ========== Section À propos =========== */
+.about {
+   width: 100%;
+   background-color: #fff;
+   display: flex; 
+   flex-direction: column;
+   padding-bottom: 10px;
+}
+
+.about__title {
+   font-size: 2rem;
+   text-align: center;
+   color: var(--neon-blue);
+   margin: 50px 0 20px;
+}
+
+.about__content {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 80px;
+}
+
+.about__left-side{
+   margin-bottom: 50px;
+}
+
+.left-side__title,
+.right-side__title {
+   font-size: 1.5rem;
+   font-weight: 600;
+   margin-bottom: 3px;
+}
+
+.blue-text {
+   color: var(--neon-blue);
+}
+
+.about__description {
+   font-size: 1rem;
+   margin-bottom: 20px;
+}
+
+.about-btn {
+   display: inline-block;
+   color: var(--neon-blue);
+   font-weight: 700;
+   font-size: 1rem;
+   padding: 0.9375rem;
+   background-color: transparent;
+   border: 3px solid var(--neon-blue);
+   border-radius: 5px;
+   transition: all ease-in .3s;
+}
+
+.about-btn:hover {
+   color: #fff;
+   background-color: var(--neon-blue);
+   border: 3px solid var(--neon-blue);
+}
+
+.skills {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   flex-wrap: wrap;
+}
+
+.skill {
+   color: #fff;
+   font-size: 1rem;
+   font-weight: 700;
+   background-color: var(--neon-blue);
+   border-radius: 5px;
+   padding: 0.9375rem;
+}
+
+/* ========== Section Projet =========== */
+.project {
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center; */
+   align-items: center;
+}
+
+.project__title {
+   font-size: 2rem;
+   color: #fff;
+   margin: 40px 0px;
+}
+
+.project__container {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   margin-bottom: 80px;
+}
+
+.project__img-box {
+   width: 320px;
+   height: 320px;
+}
+
+/* =========== Section Contact ========== */
+.contact {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   background-color: var(--white);
+}
+
+.contact__title {
+   font-size: 2rem;
+   color: var(--neon-blue);
+   margin: 40px 0 20px;
+}
+
+form {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   margin-bottom: 80px;
+}
+
+.form__names {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-bottom: 20px;
+}
+
+.firtname__field,
+.lastname__field {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   gap: 2px;
+   width: 100%;
+}
+
+label {
+   color: var(--neon-blue);
+   font-size: 1.375rem;
+   font-weight: 700;
+}
+
+input:not(input[type="submit"]),
+textarea {
+   font-size: 1.125rem;
+   font-weight: 700;
+   color: var(--black-60);
+   background-color: var(--grey);
+   height: 55px;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   padding-left: 20px;
+}
+
+input::placeholder,
+textarea::placeholder {
+   color: var(--black-60);
+   font-size: 1.125rem;
+   font-weight: 700;
+}
+
+/* input[name="firstname"],
+input[name="lastname"] {
+   width: 100%;
+} */
+
+.form__email {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.form__message {
+   width: 100%;
+   margin-bottom: 30px;
+}
+
+textarea {
+   width: 100%;
+   height: 225px;
+   padding: 0.9375rem 1.25rem;
+   resize: none;
+}
+
+.submit-btn {
+   display: block;
+   padding: 15px 55px;
+   font-size: 1.25rem;
+   font-weight: 700;
+   color: var(--neon-blue);
+   background-color: transparent;
+   border: 3px solid var(--neon-blue);
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all ease .3s;
+}
+
+.submit-btn:hover {
+   color: var(--white);
+   background-color: var(--neon-blue);
+}
+
+/* ========== Footer ========== */
+footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+   padding: 30px 0;
+   background-color: var(--neon-blue);
+}
+
+.social-link {
+   font-size: 3.125rem;
+   color: var(--white);
+}
+
+/* ========== Feedback mail ========== */
+.success,
+.error {
+   position: fixed;
+   bottom: 20px;
+   right: -530px;
+   padding: 0.625rem;
+   border-radius: 10px;
+   animation: reveal ease 8s;
+   z-index: 2;
+   max-width: 250px;
+}
+
+/* ====== Animation d'apparition ====== */
+@keyframes reveal {
+   0% {
+      right: -530px;
+   }
+
+   25% {
+      right: -430px;
+   }
+
+   50% {
+      right: 20px;
+   }
+
+   75% {
+      right: 20px;
+   }
+
+   100% {
+      right: -530px;
+   }
+}
+
+.success {
+   background: #02c39a;
+}
+
+.error {
+   background: #ef233c;
+}
+
+.message {
+   color: var(--white);
+   font-weight: 500;
+   font-size: 1rem;
+}
+
+/* ========== Responsive ========== */
+/* ====== 640px ====== */
+@media screen and (min-width: 640px){
+   .skills {
+      width: 500px;
+   }
+}
+
+/* ====== 800px ====== */
+@media screen and (min-width: 800px){
+   /* ========== Section projet ==========*/
+   .project__container{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+   }
+
+   /* =========== Section Contact ========== */
+   form  {
+      width: 700px;
+   }
+
+   .form__names {
+      flex-wrap: nowrap;
+   }
+
+   
+   .firtname__field,
+   .lastname__field {
+      width: auto;
+   }
+
+   input[name="firstname"],
+   input[name="lastname"] {
+      width: 340px;
+   }
+}
+
+/* ====== 1280px ====== */
+@media screen and (min-width: 1280px){ 
+   /* ========== Header ========== */
+   .header,
+   section {
+      padding: 0 6.25rem;
+   }
+   
+   .logo {
+      font-size: 2rem;
+   }
+
+   .toggle,
+   .close{
+      display: none;
+   }
+
+   /* ========== Navigation ========== */
+   .nav-menu{
+      position: static;
+      width: auto;
+      background: var(--white);
+      transform: translateY(0);
+   }
+
+   .nav-list {
+      flex-direction:row;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 0;
+      z-index: 1;
+   }
+
+   /* ========== Section Accueil ==========*/
+   .home {
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 60px auto 0;
+   }
+
+   /* ====== Partie gauche ====== */
+   .home__left-side {
+      align-items: start;
+      text-align: start;
+   }
+
+   .home__title {
+      font-size: 2.625rem;
+   }
+
+   .home__description {
+      font-size: 1.25rem;
+   }
+
+   .home__btn {
+      padding: 0.9375rem;
+      font-size: 1.125rem;
+   }
+
+   /* ====== Partie Droite ====== */
+   .home__right-side{
+      width: 420px;
+      height: 420px;
+      margin-bottom: 0;
+   }
+
+   /* ========== Section À propos =========== */
+   .about__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   /* ====== À propos ====== */
+   .about__left-side{
+      margin-bottom: 0;
+   }
+
+   .left-side__title,
+   .right-side__title {
+      font-size: 1.75rem;
+   }
+
+   .about__description {
+      font-size: 1.25rem;
+      max-width: 700px;
+   }
+
+   /* ====== Mes compétences ====== */
+   .skills {
+      width: 360px;
+   }
+
+   /* ========== Section Projet =========== */
+   .project__container {
+      max-width: 1400px;
+   }
+
+   .project__img-box {
+      width: 350px;
+      height: 350px;
+   }
+
+   /* ========== Section Contact =========== */
+   form{
+      width: 800px;
+   }
+
+   input[name="firstname"],
+   input[name="lastname"] {
+      width: 380px;
+   }
+}
+
+/* ====== 1920px ====== */
+@media screen and (min-width: 1920px){ 
+   /* ========== Header ========== */
+   .header,
+   section {
+      padding: 0 9.375rem;
+   }
+
+   section {
+      scroll-margin: 100px;
+   }
+
+   .header {
+      height: 100px;
+   }
+
+   .logo {
+      font-size: 2.5rem;
+   }
+
+   /* ========== Navigation ========== */
+   .nav-link{
+      font-size: 1.5rem;
+   }
+
+   /* ========== Section Accueil ==========*/
+   .home {
+      margin: 0 auto;
+   }
+
+   /* ====== Partie Droite ====== */
+   .home__right-side{
+      width: 520px;
+      height: 520px;
+   }
+
+   /* ========== Section À propos =========== */
+   /* ====== À propos ====== */
+   .left-side__title,
+   .right-side__title {
+      font-size: 2.25rem;
+   }
+
+   /* ====== Mes compétences ====== */
+   .skills {
+      width: 400px;
+   }
+
+   /* ========== Section Projet =========== */
+   .project__img-box {
+      width: 380px;
+      height: 380px;
+   }
+
+   /* ========== Section Contact =========== */
+   .contact__title{
+      font-size: 2.25rem;
+   }
+}
+
+/*  */
